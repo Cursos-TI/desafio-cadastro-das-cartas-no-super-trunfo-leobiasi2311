@@ -1,44 +1,23 @@
-
-
-// Desafio Super Trunfo - Países
-// Tema 1 - Cadastro das Cartas
-// Este código inicial serve como base para o desenvolvimento do sistema de cadastro de cartas de cidades.
-// Siga os comentários para implementar cada parte do desafio.
-//Teste larissa
-
-    
-    // Sugestão: Defina variáveis separadas para cada atributo da cidade.
-    // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
-    
-    // Cadastro das Cartas:
-    // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
-    // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
-    
-    // Exibição dos Dados das Cartas:
-    // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
-    // Exiba os valores inseridos para cada atributo da cidade, um por linha.
-    
-          #include <stdio.h>
+    #include <stdio.h>
 
     int main(){
     
        char estado1[50];
        char codigo1[50];
        char nome1[50];
-       unsigned long int Populacao1;
+       int Populacao1;
        float area1;
        float pib1;
        int pontos1;
        char estado2[50];
        char codigo2[50];
        char nome2[50];
-       unsigned long int Populacao2;
+       int Populacao2;
        float area2;
        float pib2;
        int pontos2;
        float densidade1, densidade2;
        float capita1, capita2;
-       float superpoder1, superpoder2;
 
         printf ("Digite os dados da Carta 1: \n");
 
@@ -52,7 +31,7 @@
         scanf("%s", nome1);
 
         printf("Digite a População da Cidade 1: \n");
-        scanf("%lu", &Populacao1);
+        scanf("%d", &Populacao1);
 
         printf("Digite a Area da Cidade 1 (em km²): \n");
         scanf("%f", &area1);
@@ -75,7 +54,7 @@
         scanf("%s", nome2);
 
         printf("Digite a População da Cidade 2: \n");
-        scanf("%lu", &Populacao2);
+        scanf("%d", &Populacao2);
 
         printf("Digite a Area da Cidade 2 (em km²): \n");
         scanf("%f", &area2);
@@ -96,27 +75,14 @@
         capita2 = (float) pib2 / Populacao2;
 
         printf("\nCarta 1: \nEstado: %s\nCódigo da carta: %s\n", estado1, codigo1);
-        printf("Nome da Cidade: %s\nPopulação: %lu\n", nome1, Populacao1);
+        printf("Nome da Cidade: %s\nPopulação: %d\n", nome1, Populacao1);
         printf("Área: %.2f km²\nPIB: %.2f bilhões de reais\nNúmero de Pontos Turísticos: %d\n", area1, pib1, pontos1);
         printf("Densidade Populacional: %.2f hab/km²\nPIB per Capita: %.2f reais\n", densidade1, capita1);
        
         printf("\nCarta 2: \nEstado: %s\nCódigo da carta: %s\n", estado2, codigo2);
-        printf("Nome da Cidade: %s\nPopulação: %lu\n", nome2, Populacao2);
+        printf("Nome da Cidade: %s\nPopulação: %d\n", nome2, Populacao2);
         printf("Área: %.2f km²\nPIB: %.2f bilhões de reais\nNúmero de Pontos Turísticos: %d\n", area2, pib2, pontos2);
         printf("Densidade Populacional: %.2f hab/km²\nPIB per Capita: %.2f reais\n", densidade2, capita2);
-
-        //calculo superpoder
-        superpoder1 = Populacao1 + area1 + pib1 + pontos1 + capita1 + (1 / densidade1);
-        superpoder2 = Populacao2 + area2 + pib2 + pontos2 + capita2 + (1 / densidade2);
-
-        printf("\nComparação de Cartas:");
-        printf("População: Carta 1 venceu (%d)\n", Populacao1 > Populacao2);
-        printf("Área: Carta 1 venceu (%d)\n", area1 > area2);
-        printf("PIB: Carta 1 venceu (%d)\n", pib1 > pib2);
-        printf("Pontos Turísticos: Carta 1 venceu (%d)\n", pontos1 > pontos2);
-        printf("Densidade Populacional: Carta 2 venceu (%d)\n", densidade2 > densidade1);
-        printf("PIB per Capita: Carta 1 venceu (%d)\n", capita1 > capita2);
-        printf("Super Poder: Carta 1 venceu (%d)\n", superpoder1 > superpoder2);
 
         return 0;
 
