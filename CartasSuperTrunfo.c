@@ -19,7 +19,8 @@
     // Exiba os valores inseridos para cada atributo da cidade, um por linha.
     
     #include <stdio.h>
-    int main() {
+
+    int main(){
     
        char estado1[50];
        char codigo1[50];
@@ -35,6 +36,8 @@
        float area2;
        float pib2;
        int pontos2;
+       float densidade1, densidade2;
+       float capita1, capita2;
 
         printf ("Digite os dados da Carta 1: \n");
 
@@ -85,14 +88,22 @@
 
 
 
+        densidade1 = Populacao1 / area1;
+        densidade2 = Populacao2 /  area2;
+
+        capita1 = (float) pib1 / Populacao1;
+        capita2 = (float) pib2 / Populacao2;
+
         printf("\nCarta 1: \nEstado: %s\nCódigo da carta: %s\n", estado1, codigo1);
         printf("Nome da Cidade: %s\nPopulação: %d\n", nome1, Populacao1);
         printf("Área: %.2f km²\nPIB: %.2f bilhões de reais\nNúmero de Pontos Turísticos: %d\n", area1, pib1, pontos1);
+        printf("Densidade Populacional: %.2f hab/km²\nPIB per Capita: %.2f reais\n", densidade1, capita1);
        
-         printf("\nCarta 2: \nEstado: %s\nCódigo da carta: %s\n", estado2, codigo2);
+        printf("\nCarta 2: \nEstado: %s\nCódigo da carta: %s\n", estado2, codigo2);
         printf("Nome da Cidade: %s\nPopulação: %d\n", nome2, Populacao2);
         printf("Área: %.2f km²\nPIB: %.2f bilhões de reais\nNúmero de Pontos Turísticos: %d\n", area2, pib2, pontos2);
+        printf("Densidade Populacional: %.2f hab/km²\nPIB per Capita: %.2f reais\n", densidade2, capita2);
 
-    
-    return 0;
-}
+        return 0;
+
+    }
